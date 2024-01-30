@@ -1,0 +1,49 @@
+@import "./colors.scss";
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.app {
+  background: red;
+  color: $text;
+  .layout {
+    height: 100vh;
+    .header {
+      text-align: center;
+      height: 64px;
+      background-color: $background;
+      border-bottom: 1px solid rgb(150, 150, 150);
+      font-size: 2rem;
+      font-family: "Playfair Display", serif;
+      font-optical-sizing: auto;
+      .navlink {
+        color: $text;
+        text-decoration: none;
+      }
+    }
+    .footer {
+      text-align: center;
+      background-color: $background;
+      border-top: 1px solid rgb(150, 150, 150);
+      font-size: 2rem;
+    }
+    .sider {
+      text-align: center;
+      line-height: 120px;
+      background: #1677ff;
+    }
+    .content {
+      font-size: 2rem;
+      text-align: center;
+      min-height: 120px;
+      line-height: 120px;
+      background: $background;
+      font-family: "Montserrat", sans-serif;
+      font-optical-sizing: auto;
+    }
+  }
+}
