@@ -34,7 +34,8 @@
     .sider {
       text-align: center;
       line-height: 120px;
-      background: #1677ff;
+      background-color: $secondary;
+      border-left: 1px solid rgb(150, 150, 150);
     }
     .content {
       overflow: auto;

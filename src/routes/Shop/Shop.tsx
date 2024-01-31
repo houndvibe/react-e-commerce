@@ -1,10 +1,14 @@
+import { Outlet } from "react-router-dom";
 import ProductsList from "../../components/ProductsList/ProductsList";
-import classes from "./Shop.module.scss";
+import { Flex } from "antd";
 
 const Shop: React.FC = () => {
   return (
     <div>
-      <ProductsList />
+      <Flex gap={"middle"}>
+        <Outlet />
+        <ProductsList />
+      </Flex>
     </div>
   );
 };

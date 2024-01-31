@@ -5,6 +5,8 @@ import App from "./routes/App/App";
 import store from "./redux/store";
 import Shop from "./routes/Shop/Shop";
 import Cart from "./routes/Cart/Cart";
+import { fetchProducts } from "./redux/productsSlice";
+import ProductPage from "./components/ProductPage/ProductPage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,13 @@ const router = createBrowserRouter([
       {
         path: "/shop",
         element: <Shop />,
+        children: [
+          {
+            path: "/shop/:productId",
+            element: <ProductPage />,
+            errorElement: <>AppErrorElement</>,
+          },
+        ],
       },
       {
         path: "/cart",
@@ -30,3 +39,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
     <RouterProvider router={router} />
   </Provider>
 );
+
+store.dispatch(fetchProducts());

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const FETCH_PRODUCTS_URL = "https://dummyjson.com/products";
+const FETCH_PRODUCTS_URL = "https://dummyjson.com/products?limit=0";
 
 export default class productsApi {
   static async getProducts() {
