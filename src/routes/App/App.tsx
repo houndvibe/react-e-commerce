@@ -27,7 +27,7 @@ const App: React.FC = () => {
           </Content>
           <Footer className={classes.footer}>Footer</Footer>
         </Layout>
-        <Sider className={classes.sider} width={"0px"}>
+        <Sider className={classes.sider} width={"0%"}>
           Sider
         </Sider>
       </Layout>

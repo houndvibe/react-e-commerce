@@ -37,6 +37,8 @@
       background: #1677ff;
     }
     .content {
+      overflow: auto;
+      padding: 20px;
       font-size: 2rem;
       text-align: center;
       min-height: 120px;
