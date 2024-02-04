@@ -1,16 +1,24 @@
 import { useSelector } from "react-redux";
 import { selectSelectedProduct } from "../../redux/productsSlice";
 import classes from "./ProductPage.module.scss";
-import { Button, Flex, Input, Typography } from "antd";
+import {
+  Button,
+  Carousel,
+  Flex,
+  Image,
+  InputNumber,
+  Rate,
+  Typography,
+} from "antd";
 import { useAppDispatch } from "../../redux/hooks";
 import { addToCart } from "../../redux/cartSlice";
 import { useState } from "react";
-const { Text } = Typography;
+import MyCarousel from "../UI/Carousel/MyCarousel";
+import MyInputNumber from "../UI/InputNumber/MyInputNumber";
+const { Text, Title } = Typography;
 
 const ProductPage = () => {
   const {
-    brand,
-    category,
     description,
     discountPercentage,
     id,
@@ -18,38 +26,52 @@ const ProductPage = () => {
     price,
     rating,
     stock,
-    thumbnail,
     title,
   } = useSelector(selectSelectedProduct);
 
-  const [count, setCount] = useState<string | number>("1");
+  const [count, setCount] = useState<number>(1);
 
   const dispatch = useAppDispatch();
 
-  const handleClickAdd = () => {
+  const handleClickAdd = (): void => {
     dispatch(addToCart({ id, count }));
   };
-  const handleChangeCount = (e) => {
-    setCount(e.target.value);
+  const handleChangeCount = (value: number): void => {
+    setCount(value);
   };
 
   return (
     <div className={classes.productPage}>
-      <Flex gap="middle" vertical justify="center" align="center">
-        <Text strong>{title}</Text>
-        <img src={thumbnail} alt="" height="400px" width="400px" />
-        <Text>{description}</Text>
+      <div className={classes.title}>
+        <Title>{title}</Title>
+      </div>
+      <div className={classes.carousel}>
+        <MyCarousel content={images} />
+      </div>
+      <div className={classes.description}>
+        <Title level={5}>{description}</Title>
+      </div>
+      <div className={classes.price}>
+        <Text strong>Price:</Text>
         <Text delete>{price}$</Text>
         <Text strong>{(price - price / discountPercentage).toFixed(2)}$</Text>
-        <br />
-        <Text>{stock} in stock</Text>
-        <br />
-        <Text>rating - {rating}</Text>
-        <Flex>
-          <Input defaultValue={"1"} onChange={handleChangeCount} />
-          <Button onClick={handleClickAdd}>add to cart</Button>
-        </Flex>
-      </Flex>
+      </div>
+      <div className={classes.rating}>
+        <Text strong>Rating:</Text>
+        <Rate allowHalf defaultValue={rating} />
+        <Text>{rating}</Text>
+      </div>
+      <div className={classes.count}>
+        <Text strong>{stock} in stock</Text>
+        <MyInputNumber
+          min={1}
+          max={stock}
+          defaultValue={1}
+          onChange={handleChangeCount}
+          width={70}
+        />
+        <Button onClick={handleClickAdd}>add to cart</Button>
+      </div>
     </div>
   );
 };

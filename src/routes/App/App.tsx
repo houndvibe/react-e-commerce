@@ -1,10 +1,10 @@
 import { Flex, Layout } from "antd";
 import classes from "./App.module.scss";
 import { NavLink, Outlet } from "react-router-dom";
-import Cart from "../Cart/Cart";
 import { useSelector } from "react-redux";
 import { selectCartProducts } from "../../redux/cartSlice";
 import SideCart from "../../components/SideCart/SideCart";
+import FooterContent from "../../components/FooterContent/FooterContent";
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -30,11 +30,13 @@ const App: React.FC = () => {
           <Content className={classes.content}>
             <Outlet />
           </Content>
-          <Footer className={classes.footer}>Footer</Footer>
+          <Footer className={classes.footer}>
+            <FooterContent />
+          </Footer>
         </Layout>
         <Sider
           className={classes.sider}
-          width={`${cartProducts.length ? "20%" : "0%"}`}
+          width={`${cartProducts.length ? "15%" : "0%"}`}
         >
           <SideCart cartProducts={cartProducts} />
         </Sider>

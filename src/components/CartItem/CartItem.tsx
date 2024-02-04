@@ -1,73 +1,71 @@
-import { selectAllProducts } from "../../redux/productsSlice";
+import { selectProductById } from "../../redux/productsSlice";
 import { useSelector } from "react-redux";
-import { Button, Card, Input, Typography } from "antd";
-import { useState } from "react";
+import { Button, Card, Flex, Typography } from "antd";
 import classes from "./CartItem.module.scss";
 import { useAppDispatch } from "../../redux/hooks";
-import { deleteFromCart } from "../../redux/cartSlice";
-import { Link } from "react-router-dom";
-
+import {
+  changeCountBy,
+  deleteFromCart,
+  postOrder,
+} from "../../redux/cartSlice";
+import MyInputNumber from "../UI/InputNumber/MyInputNumber";
+import Utilities from "../../services/utilities";
 const { Text } = Typography;
-const CartItem = ({ id, count }) => {
-  const products = useSelector(selectAllProducts);
-  const {
-    brand,
-    category,
-    description,
-    discountPercentage,
-    images,
-    price,
-    rating,
-    stock,
-    thumbnail,
-    title,
-  } = products.find((product) => product.id == id);
-  const dispatch = useAppDispatch();
-  const [currentCount, setCurrentCount] = useState<number>(count);
 
-  const handleChangeCount = (e) => {
-    setCurrentCount(e.target.value);
+export interface cartItem {
+  id: number;
+  count: number;
+}
+
+const CartItem: React.FC<cartItem> = ({ id, count }) => {
+  const { discountPercentage, price, stock, thumbnail, title, description } =
+    useSelector(selectProductById(id));
+
+  const dispatch = useAppDispatch();
+
+  const handleChangeCount = (value: number): void => {
+    dispatch(changeCountBy({ id: id, count: value }));
   };
 
-  const handleDelete = () => {
+  const handleDelete = (): void => {
     dispatch(deleteFromCart(id));
   };
 
-  const totalPrice = price * currentCount;
-  const totalDiscountedPrice = (
-    (price - price / discountPercentage) *
-    currentCount
-  ).toFixed(2);
+  const [totalPrice, totalDiscountedPrice] = Utilities.countPrice(
+    price,
+    count,
+    discountPercentage
+  );
 
   return (
     <div className={classes.cartItem}>
-      <Card
-        title={title}
-        extra={<Link to={"cart"}>go to cart</Link>}
-        cover={<img src={thumbnail} />}
-      >
-        <p>
-          <div>
-            count:
-            <Input value={currentCount} onChange={handleChangeCount} />
-          </div>
-          <div>
-            {" "}
-            price per unit:<Text delete>{price}</Text>
-            <Text strong>
-              {(price - price / discountPercentage).toFixed(2)}$
+      <div className={classes.image}>
+        <img src={thumbnail} width={200} />
+      </div>
+
+      <div className={classes.info}>
+        <Text strong>{title}</Text>
+        <Text className={classes.description}>{description}</Text>
+        <div className={classes.order}>
+          <Flex gap="small">
+            <Text strong delete>
+              {totalPrice}$
             </Text>
-          </div>
-          <div>
-            {" "}
-            total:<Text delete>{totalPrice}</Text>
             <Text strong>{totalDiscountedPrice}$</Text>
-          </div>
-        </p>
-        <Button danger onClick={handleDelete}>
-          delete
-        </Button>
-      </Card>
+          </Flex>
+          <Flex gap="small">
+            <MyInputNumber
+              min={1}
+              max={stock}
+              value={count}
+              onChange={handleChangeCount}
+            />
+            <Button danger onClick={handleDelete}>
+              delete
+            </Button>
+          </Flex>
+        </div>
+      </div>
     </div>
   );
 };

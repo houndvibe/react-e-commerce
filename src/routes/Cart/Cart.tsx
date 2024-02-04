@@ -1,19 +1,23 @@
-import { useSelector } from "react-redux";
-import CartItem from "../../components/CartItem/CartItem";
 import { selectCartProducts } from "../../redux/cartSlice";
-import classes from "./Cart.module.scss";
 import { Flex } from "antd";
+import CartList from "../../components/CartList/CartList";
+import CartPannel from "../../components/CartPannel/CartPannel";
+import { useSelector } from "react-redux";
+import classes from "./Cart.module.scss";
 
-const Cart: React.FC<any> = () => {
+const Cart: React.FC = () => {
   const cartProducts = useSelector(selectCartProducts);
 
   return (
-    <div>
-      <Flex className={classes.cartItem}>
-        {cartProducts?.map((product: any) => {
-          return <CartItem {...product} />;
-        }) || <>123</>}
-      </Flex>
+    <div className={classes.cart}>
+      {cartProducts.length ? (
+        <Flex vertical gap={"middle"}>
+          <CartList />
+          <CartPannel />
+        </Flex>
+      ) : (
+        <div>No products in cart</div>
+      )}
     </div>
   );
 };

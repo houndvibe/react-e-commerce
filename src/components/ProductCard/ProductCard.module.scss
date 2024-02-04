@@ -1,0 +1,11 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+.content > * {
+  padding: 2px;
+}
+.description {
+  text-align: left;
+}

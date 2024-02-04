@@ -48,7 +48,6 @@ export default (env: EnvVariables) => {
                 getCustomTransformers: () => ({
                   before: [ReactRefreshTypeScript()].filter(Boolean),
                 }),
-                transpileOnly: true,
               },
             },
           ],
@@ -81,7 +80,7 @@ export default (env: EnvVariables) => {
     devtool: isDev ? "inline-source-map" : false,
     devServer: isDev
       ? {
-          port: env.port ?? 3000,
+          port: env.port ?? 3001,
           open: true,
           historyApiFallback: true,
           hot: true,

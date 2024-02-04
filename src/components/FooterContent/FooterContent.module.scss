@@ -1,0 +1,13 @@
+@import "../../routes/App/colors.scss";
+a {
+  color: $text;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  &:hover {
+    color: $accent;
+  }
+}
+.text {
+  margin-bottom: 4px;
+}

@@ -1,5 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { RootState } from "./store";
+import productsApi, { OrderItem } from "../services/productsApi";
 
 interface cartState {
   cartProducts: { id: number; count: number }[];
@@ -13,7 +14,33 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addToCart(state, action) {
-      state.cartProducts.push(action.payload);
+      const same = state.cartProducts.find(
+        (product) => product.id == action.payload.id
+      );
+      if (same) {
+        state.cartProducts = state.cartProducts.map((product) => {
+          if (product.id == action.payload.id) {
+            console.log(+action.payload.count + +product.count);
+            return {
+              id: product.id,
+              count: +product.count + +action.payload.count,
+            };
+          } else {
+            return product;
+          }
+        });
+      } else {
+        state.cartProducts.push(action.payload);
+      }
+    },
+    changeCountBy(state, action) {
+      state.cartProducts = state.cartProducts.map((product) => {
+        if (product.id == action.payload.id) {
+          return { id: product.id, count: action.payload.count };
+        } else {
+          return product;
+        }
+      });
     },
     deleteFromCart(state, action) {
       console.log(action.payload);
@@ -24,7 +51,14 @@ export const cartSlice = createSlice({
   },
 });
 
-export const { addToCart, deleteFromCart } = cartSlice.actions;
+export const postOrder = createAsyncThunk(
+  "cart/postOrder",
+  async (order: OrderItem[]) => {
+    return await productsApi.postOrder(order);
+  }
+);
+
+export const { addToCart, deleteFromCart, changeCountBy } = cartSlice.actions;
 
 export const selectCartProducts = (state: RootState) =>
   state.cartReducer.cartProducts;

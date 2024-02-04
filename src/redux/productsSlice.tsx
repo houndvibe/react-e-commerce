@@ -16,7 +16,7 @@ export interface productProps {
   title: string;
 }
 
-interface productsState {
+export interface productsState {
   products: productProps[];
   selectedProductId: number | null;
 }
@@ -36,7 +36,6 @@ export const productsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(fetchProducts.fulfilled, (state, action) => {
-      console.log(action.payload);
       state.products = action.payload.products;
     });
   },
@@ -55,6 +54,9 @@ export const selectSelectedProduct = (state: RootState) =>
   state.productsReducer.products.find(
     (item) => item.id == state.productsReducer.selectedProductId
   );
+
+export const selectProductById = (id: number) => (state: RootState) =>
+  state.productsReducer.products.find((product) => product.id == id);
 
 export const { setSelectedProduct } = productsSlice.actions;
 

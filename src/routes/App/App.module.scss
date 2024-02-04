@@ -33,17 +33,14 @@
     }
     .sider {
       text-align: center;
-      line-height: 120px;
       background-color: $secondary;
       border-left: 1px solid rgb(150, 150, 150);
     }
     .content {
-      overflow: auto;
       padding: 20px;
       font-size: 2rem;
       text-align: center;
       min-height: 120px;
-      line-height: 120px;
       background: $background;
       font-family: "Montserrat", sans-serif;
       font-optical-sizing: auto;

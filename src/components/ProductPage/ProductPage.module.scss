@@ -1,6 +1,43 @@
 .productPage {
   border: 1px solid rgb(160, 160, 160);
   border-radius: 10px;
-  max-height: 82vh;
+  max-height: 80vh;
   padding: 20px;
+}
+.title {
+  display: flex;
+  justify-content: center;
+}
+.carousel {
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 10px;
+  overflow: hidden;
+}
+.description {
+  text-align: left;
+  display: flex;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding: 4px;
+}
+.price {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+.rating {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+.count {
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
 }

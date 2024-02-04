@@ -1,0 +1,229 @@
+/*!*************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/routes/App/App.module.scss ***!
+  \*************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap);
+/*!*****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/routes/App/App.module.scss (1) ***!
+  \*****************************************************************************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap);
+/*!*****************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/routes/App/App.module.scss (2) ***!
+  \*****************************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.jvb4V_ALu_dvBFrTeBD0 {
+  background: red;
+  color: #040a09;
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ {
+  height: 100vh;
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ .lvgXodO1XOue9Hf_B052 {
+  text-align: center;
+  height: 64px;
+  background-color: #f6fbfa;
+  border-bottom: 1px solid rgb(150, 150, 150);
+  font-size: 2rem;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ .lvgXodO1XOue9Hf_B052 .D620q5ciKEugqGt142CX {
+  color: #040a09;
+  text-decoration: none;
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ .LcvP7Oq3GrBdsxyFJHnQ {
+  text-align: center;
+  background-color: #f6fbfa;
+  border-top: 1px solid rgb(150, 150, 150);
+  font-size: 2rem;
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ .YblXXyjX4EHDzimPWDte {
+  text-align: center;
+  background-color: #f6fbfa;
+  border-left: 1px solid rgb(150, 150, 150);
+}
+.jvb4V_ALu_dvBFrTeBD0 .lBAZLIcrqW3O5hACDsVQ .dST5YsfRnlqSoxByv7KA {
+  overflow: auto;
+  padding: 20px;
+  font-size: 2rem;
+  text-align: center;
+  min-height: 120px;
+  background: #f6fbfa;
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+}
+/*!***************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideCart/SideCart.module.scss ***!
+  \***************************************************************************************************************************************/
+.uL9dLJPurMziduR1xpcZ {
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 100vh;
+}
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/SideCartItem/SideCartItem.module.scss ***!
+  \***********************************************************************************************************************************************/
+.wbmv40v7cYH45ajegUUO {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProductsList/ProductsList.module.scss ***!
+  \***********************************************************************************************************************************************/
+.L8vnYpylwmonB3Dlx1kd {
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid rgb(160, 160, 160);
+  max-height: 82vh;
+  overflow: auto;
+}
+
+.F0KH1bwF2DnwwdE405bg {
+  margin: 0px 0px 20px 10px;
+}
+/*!***********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/FilterPannel/FilterPannel.module.scss ***!
+  \***********************************************************************************************************************************************/
+.sEoB2vhPabKKJwYC6db3 {
+  display: flex;
+  gap: 20px;
+}
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProductCard/ProductCard.module.scss ***!
+  \*********************************************************************************************************************************************/
+.pHpdPKoKGGegDxmkO0gz {
+  display: flex;
+  flex-direction: column;
+  align-items: self-start;
+}
+
+.pHpdPKoKGGegDxmkO0gz > * {
+  padding: 2px;
+}
+
+.S89_aiUv1IconNWlheLO {
+  text-align: left;
+}
+/*!**************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/MyPagination/MyPagination.module.scss ***!
+  \**************************************************************************************************************************************************/
+.bDSRBraL6hhDUJ1CwhAo {
+  padding-bottom: 20px;
+}
+
+.RkO_J30BcEb8nT0JL5sw {
+  border-top: 1px solid rgb(206, 206, 206);
+  border-bottom: 1px solid rgb(206, 206, 206);
+  padding: 20px;
+}
+
+.UF6ViDX91jK2RADF1Bj8 {
+  padding-top: 20px;
+}
+/*!*********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/ProductPage/ProductPage.module.scss ***!
+  \*********************************************************************************************************************************************/
+.ICbYoSBT6fc7fUf953Hk {
+  border: 1px solid rgb(160, 160, 160);
+  border-radius: 10px;
+  max-height: 82vh;
+  padding: 20px;
+}
+
+.yweA5krrlRXtFvPN05ka {
+  display: flex;
+  justify-content: center;
+}
+
+.J939dk2hm5QlEJ2gnKZ4 {
+  border: 1px solid rgb(194, 194, 194);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.T85qjAgswXQZTWoCE3Tb {
+  text-align: left;
+  display: flex;
+  border-bottom: 1px solid rgb(194, 194, 194);
+  padding: 4px;
+}
+
+.rwFxKLxP22XfCfL94_rA {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.jqEghRknQl1df_PntcDQ {
+  display: flex;
+  justify-content: start;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+
+.NwxbD_yIhMyOk155fkJ5 {
+  display: flex;
+  justify-content: start;
+  align-items: flex-end;
+  gap: 20px;
+  padding: 10px;
+  border-bottom: 1px solid rgb(194, 194, 194);
+}
+/*!********************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/UI/Carousel/MyCarousel.module.scss ***!
+  \********************************************************************************************************************************************/
+._1zQF9eCu_qlmUI6DXER {
+  max-width: 400px;
+}
+
+.GB8FSoh6TcBfbyd5A9kl {
+  height: 300px;
+  width: 300px;
+  display: flex;
+}
+
+.kfTvFjVxQAeGE2QagNw1 {
+  max-width: 90%;
+  max-height: 90%;
+}
+
+.Ub4ZWYaHbuG0BdoW0ejx {
+  height: 90%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.F1nuIAGi5I8FSJAwLrfg {
+  background: #a3b6da;
+  width: 100%;
+  height: 10%;
+}
+/*!***************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/components/CartItem/CartItem.module.scss ***!
+  \***************************************************************************************************************************************/
+.iSLCo5UfTsug2PIOqWVg {
+  padding: 10px;
+  display: flex;
+  gap: 10px;
+  background: white;
+  border: 1px solid rgb(202, 202, 202);
+  border-radius: 10px;
+}
+
+.TBBXS6paiPejd6E9tcUw {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  gap: 6px;
+}

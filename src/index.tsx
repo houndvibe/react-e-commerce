@@ -7,6 +7,7 @@ import Shop from "./routes/Shop/Shop";
 import Cart from "./routes/Cart/Cart";
 import { fetchProducts } from "./redux/productsSlice";
 import ProductPage from "./components/ProductPage/ProductPage";
+import IndexPage from "./components/IndexPage/IndexPage";
 
 const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     element: <App />,
     errorElement: <>AppErrorElement</>,
     children: [
-      { index: true, element: <>Index page</> },
+      { index: true, element: <IndexPage /> },
       {
         path: "/shop",
         element: <Shop />,
