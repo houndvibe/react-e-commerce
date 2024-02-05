@@ -3,7 +3,7 @@ React-ReduxToolkit-TypeScript-Webpack-SCSS-ANTD-JSONServer.
 
 1.Clone repo.
 
-2.Iтstall all dependencies - yarn install.
+2.Install all dependencies - yarn install.
 
 3.Run App - yarn serve.
 
